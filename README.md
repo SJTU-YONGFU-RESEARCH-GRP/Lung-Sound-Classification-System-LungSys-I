@@ -7,7 +7,7 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 * [Bi-ResNet](#Bi-ResNet)
   * [Pre-processing](#Pre-processing)
-  * [Feature extraction](#Feature extraction)
+  * [Feature](#Feature)
   * [Train](#Train)
   * [Performance](#Performance)
 * [Android application](#Android application)
@@ -27,7 +27,7 @@ Bi-Resnet/pre-processing/stft.py
 ```
 named `clip_cycle` and `clip_test` respectively.
 
-## Feature extraction
+## Feature
 
 We implement short-time Fourier transform(stft) and wavelet analysis here to analyze lung sound. you can run 
 ```
