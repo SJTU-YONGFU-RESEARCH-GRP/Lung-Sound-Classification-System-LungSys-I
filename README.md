@@ -14,7 +14,7 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 ## Bi-ResNet
 
-The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://github.com/mmmmayi/LungSys/blob/master/pic/architecture.png）
+The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://raw.githubusercontent.com/mmmmayi/LungSys/master/pic/architecture.png）
 
 ### Prerequisites
 
