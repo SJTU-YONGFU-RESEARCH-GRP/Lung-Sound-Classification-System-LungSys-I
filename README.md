@@ -6,7 +6,7 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 ## Table of Contents
 
 * [Bi-ResNet](#Bi-ResNet)
-  * [Architecture](#Architecture)
+  * [pre-processing](#pre-processing)
   * [Train](#Train)
   * [Performance](#Performance)
 * [Android application](#Android application)
@@ -16,13 +16,15 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://github.com/mmmmayi/LungSys/blob/master/pic/architecture.png)
 
-### Prerequisites
+## pre-processing
 
-What things you need to install the software and how to install them
+In order to train the model, you need to download ICBHI 2017 database [here](https://bhichallenge.med.auth.gr/). Each sample provided by this database contains several breath cycles. So you need to clip them according to the start and end time declared officialy. Then you need to divide them into train set and test set. Here we divide them based on official suggestion.
 
+The class to clip samples and divide database are concluded in
 ```
-Give examples
+Bi-Resnet/pre-processing/stft.py
 ```
+named `clip_cycle` and `clip_test` respectively.
 
 ### Installing
 
