@@ -51,9 +51,14 @@ And it's running commands based on shell:
 sh run.sh
 ```
 
-## Contributing
+## Performance
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Comparison with state-of-the art works:
+![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result1.PNG)
+Confusion matrix:
+![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result2.PNG)
+
+
 
 ## Versioning
 
