@@ -54,8 +54,11 @@ sh run.sh
 ## Performance
 
 Comparison with state-of-the art works:
+
 ![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result1.PNG)
+
 Confusion matrix:
+
 ![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result2.PNG)
 
 
