@@ -7,6 +7,7 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 * [Bi-ResNet](#Bi-ResNet)
   * [Pre-processing](#Pre-processing)
+  * [Feature extraction](#Feature extraction)
   * [Train](#Train)
   * [Performance](#Performance)
 * [Android application](#Android application)
@@ -33,60 +34,22 @@ We implement short-time Fourier transform(stft) and wavelet analysis here to ana
 Bi-Resnet/pre-processing/stft.py
 Bi-Resnet/pre-processing/wavelet.py
 ```
-respectively and store the spectrogram and wavelet parameter as a picture locally.
-Here are two example of stft spectrogram and wavelet parameter:
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+respectively and store the spectrogram and wavelet parameter as a picture locally. Then
 ```
-Give the example
+Bi-Resnet/pre-processing/pack.py
 ```
+helps you to store stft spectrogram, wavelet parameters and label into `Bi-Resnet/analysis/pack/wavelet_stft_train.p` and `Bi-Resnet/analysis/pack/wavelet_stft_test.p`
 
-And repeat
+## Train
 
+The model was built using Pytorch, please read detail in 
 ```
-until finished
+Bi-Resnet/model/bnn.py
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+And it's running commands based on shell:
 ```
-Give an example
+sh run.sh
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
