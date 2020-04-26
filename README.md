@@ -1,6 +1,6 @@
 # Lung sound classification system
 
-This repository contains the 1) Bi-ResNet for lung sound classification, which is proposed in [this paper](https://ieeexplore.ieee.org/document/8919021). 2) Lung classification system based on a digital stethoscope and an android application, you can find detail information [here](https://ieeexplore.ieee.org/document/8918752)
+This repository contains the 1) Bi-ResNet for lung sound classification, which is proposed in [this paper](https://ieeexplore.ieee.org/document/8919021). 2) Lung classification system based on a digital stethoscope and an android application, you can find detail information [here] (https://ieeexplore.ieee.org/document/8918752)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
