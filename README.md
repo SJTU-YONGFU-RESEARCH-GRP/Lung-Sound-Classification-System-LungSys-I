@@ -6,7 +6,8 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 ## Table of Contents
 
 * [Bi-ResNet](#Bi-ResNet)
-  * [Architecture](#Architecture)
+  * [Pre-processing](#Pre-processing)
+  * [Feature](#Feature)
   * [Train](#Train)
   * [Performance](#Performance)
 * [Android application](#Android application)
@@ -14,104 +15,61 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 ## Bi-ResNet
 
-The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://github.com/mmmmayi/LungSys/blob/master/pic/architecture.png）
+The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://github.com/mmmmayi/LungSys/blob/master/pic/architecture.png)
 
-### Prerequisites
+## Pre-processing
 
-What things you need to install the software and how to install them
+In order to train the model, you need to download ICBHI 2017 database [here](https://bhichallenge.med.auth.gr/). Each sample provided by this database contains several breath cycles. So you need to clip them according to the start and end time declared officialy. Then you need to divide them into train set and test set. Here we divide them based on official suggestion.
 
+The class to clip samples and divide database are concluded in
 ```
-Give examples
+Bi-Resnet/pre-processing/stft.py
 ```
+named `clip_cycle` and `clip_test` respectively.
 
-### Installing
+## Feature
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+We implement short-time Fourier transform(stft) and wavelet analysis here to analyze lung sound. you can run 
 ```
-Give the example
+Bi-Resnet/pre-processing/stft.py
+Bi-Resnet/pre-processing/wavelet.py
 ```
-
-And repeat
-
+respectively and store the spectrogram and wavelet parameter as a picture locally. Then
 ```
-until finished
+Bi-Resnet/pre-processing/pack.py
 ```
+helps you to store stft spectrogram, wavelet parameters and label into `Bi-Resnet/analysis/pack/wavelet_stft_train.p` and `Bi-Resnet/analysis/pack/wavelet_stft_test.p`
 
-End with an example of getting some data out of the system or using it for a little demo
+## Train
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+The model was built using Pytorch, please read detail in 
 ```
-Give an example
+Bi-Resnet/model/bnn.py
+```
+And it's running commands based on shell:
+```
+sh run.sh
 ```
 
-### And coding style tests
+## Performance
 
-Explain what these tests test and why
+Comparison with state-of-the art works:
 
-```
-Give an example
-```
+![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result1.PNG)
 
-## Deployment
+Confusion matrix:
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Release History
-
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
+![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result2.PNG)
     
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Yi Ma** - *Initial work* 
 
 ## License
 
-This project is licensed under the BSD-3 License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Please cite these papers if you find this project is useful:
+```
+Y. Ma et al., "LungBRN: A Smart Digital Stethoscope for Detecting Respiratory Disease Using bi-ResNet Deep Learning Algorithm," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-4.
+ Citation & Abstract
+Y. Ma et al., "Live Demo: LungSys - Automatic Digital Stethoscope System For Adventitious Respiratory Sound Detection," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-1.
+```
