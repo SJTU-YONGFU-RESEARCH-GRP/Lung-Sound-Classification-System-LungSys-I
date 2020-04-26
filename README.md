@@ -1,6 +1,6 @@
 # Lung sound classification system
 
-This repository contains the 1) Bi-ResNet for lung sound classification, which is proposed in [this paper](https://ieeexplore.ieee.org/document/8919021). 2) Lung classification system based on a digital stethoscope and an android application, you can find detail information [here](Live Demo: LungSys - Automatic Digital Stethoscope System For Adventitious Respiratory Sound Detection)
+This repository contains the 1) Bi-ResNet for lung sound classification, which is proposed in [this paper](https://ieeexplore.ieee.org/document/8919021). 2) Lung classification system based on a digital stethoscope and an android application, you can find detail information [here](https://ieeexplore.ieee.org/document/8918752)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -14,7 +14,7 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
 
 ## Bi-ResNet
 
-The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://raw.githubusercontent.com/mmmmayi/LungSys/master/pic/architecture.png）
+The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![Image](https://raw.githubusercontent.com/mmmmayi/LungSys/master/pic/architecture.png）
 
 ### Prerequisites
 
