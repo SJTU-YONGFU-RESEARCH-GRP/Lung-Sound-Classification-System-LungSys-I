@@ -10,8 +10,8 @@ This repository contains the 1) Bi-ResNet for lung sound classification, which i
   * [Feature](#Feature)
   * [Train](#Train)
   * [Performance](#Performance)
-* [Android application](#Android application)
-  * [Architecture](#Architecture)
+* [Android](#Android)
+  * [tf-lite](#tf-lite)
 * [Author](#Author)
 * [License](#License)
 ## Bi-ResNet
@@ -61,7 +61,9 @@ Comparison with state-of-the art works:
 Confusion matrix:
 
 ![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result2.PNG)
-    
+   
+## Android
+The android application amied at detecting adventitious respiratory lung sound.  Our LungSys system contains a digital stethoscope to record lung sound and to transmit the data via Bluetooth to our Android mobile tablet. Then our android application detects the start point of each breath cycle and clips the record according to it. Finally, after computer, our software will present the amount of breth cycle belonging to each class. Here is the main UI of our software. ![image]()
 ## Author
 
 * **Yi Ma** - *Initial work* 
