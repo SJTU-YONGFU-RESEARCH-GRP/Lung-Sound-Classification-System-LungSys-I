@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:orientation="vertical">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_below="@id/toolbar">
+            <LinearLayout
+                android:id="@+id/predict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/brain"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/brain"
+                    />
+
+                <TextView
+                    android:id="@+id/predict_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/brain"
+                    android:text="Predict result:"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_margin="@dimen/text_padding"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/predict">
+
+                    <TextView
+                        android:id="@+id/predict_Normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Normal"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="@dimen/text_padding"/>
+
+                    <TextView
+                        android:id="@+id/result_Normal"
+                        android:text="0 cycles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_toRightOf="@id/predict_Normal"
+                        android:layout_margin="@dimen/text_padding"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/crackle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/normal">
+
+                    <TextView
+                        android:id="@+id/predict_Crackle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crackle"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="@dimen/text_padding"/>
+
+                    <TextView
+                        android:id="@+id/result_Crackle"
+                        android:text="0 cycles"
+                        android:layout_width="match_parent"
+                        android:textSize="@dimen/text_size"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_toRightOf="@id/predict_Crackle"
+                        android:layout_margin="@dimen/text_padding"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wheeze"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/crackle">
+
+                    <TextView
+                        android:id="@+id/predict_Wheeze"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wheeze"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="@dimen/text_padding"/>
+
+                    <TextView
+                        android:id="@+id/result_Wheeze"
+                        android:text="0 cycles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_toRightOf="@id/predict_Wheeze"
+                        android:layout_margin="@dimen/text_padding"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/both"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/wheeze">
+
+                    <TextView
+                        android:id="@+id/predict_Both"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crackle plus Wheeze"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_margin="@dimen/text_padding"/>
+
+                    <TextView
+                        android:id="@+id/result_Both"
+                        android:text="0 cycles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@android:color/black"
+                        android:layout_toRightOf="@id/predict_Both"
+                        android:layout_margin="@dimen/text_padding"
+                        android:gravity="right"
+                        />
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/actual_Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/both">
+                <ImageView
+                    android:id="@+id/doctor"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/doctor"
+                    />
+
+                <TextView
+                    android:id="@+id/actual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/doctor"
+                    android:text="Actual result:"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_margin="@dimen/text_padding"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ac_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/actual_Title">
+
+                <TextView
+                    android:id="@+id/actual_Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:text="Normal"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"/>
+
+                <TextView
+                    android:id="@+id/Normal_number"
+                    android:text="0 cycles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ac_crackle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/ac_normal">
+
+                <TextView
+                    android:id="@+id/actual_Crackle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crackle"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"/>
+
+                <TextView
+                    android:id="@+id/Crackle_number"
+                    android:text="0 cycles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ac_wheeze"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/ac_crackle">
+
+                <TextView
+                    android:id="@+id/actual_Wheeze"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:text="Wheeze"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"/>
+
+                <TextView
+                    android:id="@+id/Wheeze_number"
+                    android:text="0 cycles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ac_both"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/ac_wheeze">
+
+                <TextView
+                    android:id="@+id/actual_Both"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size"
+                    android:text="Crackle plus Wheeze"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"/>
+
+                <TextView
+                    android:id="@+id/Both_number"
+                    android:text="0 cycles"
+                    android:layout_width="match_parent"
+                    android:textSize="@dimen/text_size"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="@dimen/text_padding"
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/ac_both">
+                <ImageView
+                    android:id="@+id/message"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/tip"
+                    />
+
+                <TextView
+                    android:id="@+id/tip_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/brain"
+                    android:text="This application is designed to show lung sounds classification algorithm based on bi-ResNet. The result is showed as the number of different type of cycles included in each record. Now, please try it :)"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size"
+                    android:layout_margin="@dimen/text_padding"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_below="@+id/tip">
+
+                <ImageView
+                    android:id="@+id/sjtu"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/sjtu"
+                    />
+
+                <ImageView
+                    android:id="@+id/bicasl"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="right"
+                    android:src="@drawable/bicasl" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@color/light_blue">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/title" />
+        </android.support.v7.widget.Toolbar>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom_sheet_layout"
+        layout="@layout/layout_bottom_sheet" />
+</android.support.design.widget.CoordinatorLayout>
