@@ -87,6 +87,10 @@ and make declaration in
 ```
 android/app/src/main/java/org/tensorflow/lite/examples/detection/DetectorActivity.java
 ```
+We also finished the work of feature extraction and pre-processing, which is similar to the work in training Bi-ResNet. Code for this part can be found in 
+```
+android/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.java
+```
 
 ## Author
 
