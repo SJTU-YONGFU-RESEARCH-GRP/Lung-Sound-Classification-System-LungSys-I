@@ -18,7 +18,7 @@ This repository contains the 1) Bi-ResNet for lung sound deep learning classific
 
 ## Bi-ResNet
 
-The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](https://github.com/mmmmayi/LungSys/blob/master/pic/architecture.png)
+The architecture of our Bi-ResNet. The input of stft and wavelet are short-time Fourier transform spectrogram and wavelet parameter of one sample![image](./pic/architecture.png)
 
 ## Pre-processing
 
@@ -58,15 +58,15 @@ sh run.sh
 
 Comparison with state-of-the art works:
 
-![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result1.PNG)
+![image](./pic/result1.PNG)
 
 Confusion matrix:
 
-![image](https://github.com/mmmmayi/LungSys/blob/master/pic/result2.PNG)
+![image](./pic/result2.PNG)
    
 ## LungSys
 
-The lung system amied at detecting adventitious respiratory lung sound.  Our Lung system contains a digital stethoscope and an android application. The stethoscope is used to record lung sound and to transmit the data via Bluetooth to our Android mobile tablet. Then our android application detects the start point of each breath cycle and clips the record according to it. Finally, after computing based on Bi-ResNet, our software will present the amount of breth cycle belonging to each class. Here is the main UI of our software. ![image](https://github.com/mmmmayi/LungSys/blob/master/pic/screen1.jpg)
+The lung system amied at detecting adventitious respiratory lung sound.  Our Lung system contains a digital stethoscope and an android application. The stethoscope is used to record lung sound and to transmit the data via Bluetooth to our Android mobile tablet. Then our android application detects the start point of each breath cycle and clips the record according to it. Finally, after computing based on Bi-ResNet, our software will present the amount of breth cycle belonging to each class. Here is the main UI of our software. ![image](./pic/screen1.jpg)
 
 ## tf-lite
 
@@ -92,15 +92,21 @@ We also finished the work of feature extraction and pre-processing, which is sim
 android/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.java
 ```
 
-## Author
+## Authors
 
-* **Yi Ma** - *Initial work* 
+* **Yi Ma** 
+* **Xinzi Xu**
+* **Qin Yu**
+* **Yuhang Zhang**
+* **Jian Zhao**
+* *Guoxing Wang**
+* **Yongfu Li**
 
 ## License
 
 Please cite these papers if you find this project is useful:
 ```
-Y. Ma et al., "LungBRN: A Smart Digital Stethoscope for Detecting Respiratory Disease Using bi-ResNet Deep Learning Algorithm," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-4.
+Y. Ma, et al., "LungBRN: A Smart Digital Stethoscope for Detecting Respiratory Disease Using bi-ResNet Deep Learning Algorithm," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-4.
  Citation & Abstract
-Y. Ma et al., "Live Demo: LungSys - Automatic Digital Stethoscope System For Adventitious Respiratory Sound Detection," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-1.
+Y. Ma, et al., "Live Demo: LungSys - Automatic Digital Stethoscope System For Adventitious Respiratory Sound Detection," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-1.
 ```
