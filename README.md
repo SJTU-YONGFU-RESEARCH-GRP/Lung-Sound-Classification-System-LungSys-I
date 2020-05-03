@@ -104,7 +104,7 @@ android/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.
 
 ## License
 
-Please cite these papers if you find this project is useful:
+Please cite these papers if you have used part of this work.
 ```
 Y. Ma, et al., "LungBRN: A Smart Digital Stethoscope for Detecting Respiratory Disease Using bi-ResNet Deep Learning Algorithm," 2019 IEEE Biomedical Circuits and Systems Conference (BioCAS), Nara, Japan, 2019, pp. 1-4.
  Citation & Abstract
