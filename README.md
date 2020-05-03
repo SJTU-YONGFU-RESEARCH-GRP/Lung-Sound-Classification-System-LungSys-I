@@ -99,8 +99,8 @@ android/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.
 * **Qin Yu**
 * **Yuhang Zhang**
 * **Jian Zhao**
-* *Guoxing Wang**
-* **Yongfu Li**
+* **Guoxing Wang**
+* **Yongfu Li***
 
 ## License
 
